@@ -11,6 +11,7 @@
         <i (click)="curtir()" class="fa fa-heart-o fa-2x mr-2 pull-left">{{ animal.likes }}</i>
         <i class="fa fa-comment-o fa-2x mr-2 ml-2">{{ animal.comments }}</i>
         <i (click)="excluir()" class="fa fa-trash-o fa-2x pull-right"></i>
+
       </small>
       <app-comentarios *ngIf="animal.allowComments; else warning"
       [id]="animalId"></app-comentarios>
@@ -21,4 +22,19 @@
 
     </div>
   </div>
+
 </div>
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<ng-template #ngtemplate>
+  <div class="modal-body text-center">
+    <p>Você tem certeza que quer excluir?</p>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-primary" >Sim</button>
+  </div>
+</ng-template>
+
